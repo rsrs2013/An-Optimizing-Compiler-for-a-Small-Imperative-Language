@@ -1,0 +1,16 @@
+program main;
+var i, j: integer; 
+    y: array [10,20] of integer;
+    sum: integer;
+begin
+  for i:=0, 9 do
+    for j:= 0,19 do
+    begin
+      y[i,j] := 1;
+      y[i,j] := y[i,j] + y[i,j]
+    end;
+  for i:=0,9 do
+  begin
+    writeln(y[i,1])
+  end
+end.

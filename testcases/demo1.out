@@ -1,0 +1,31 @@
+	// Assign STATIC_AREA_ADDRESS to register "r0"
+ 	 loadI 1024 	=> r0 
+	// Load LHS value of variable "a" at offset 0
+ 	 loadI 0 	=> r1 
+ 	 add r0, r1 	=> r2 
+ 	 loadI 1 	=> r3 
+ 	 store r3 	=> r2 
+	// Load LHS value of variable "b" at offset 4
+ 	 loadI 4 	=> r4 
+ 	 add r0, r4 	=> r5 
+ 	 loadI 2 	=> r6 
+ 	 store r6 	=> r5 
+	// Load LHS value of variable "a" at offset 0
+ 	 loadI 0 	=> r7 
+ 	 add r0, r7 	=> r8 
+	// Load RHS value of variable "a" at offset 0
+ 	 loadAI r0, 0 	=> r9 
+	// Load RHS value of variable "b" at offset 4
+ 	 loadAI r0, 4 	=> r10 
+ 	 add r9, r10 	=> r11 
+ 	 store r11 	=> r8 
+	// Load RHS value of variable "a" at offset 0
+ 	 loadAI r0, 0 	=> r12 
+	// Code for "WRITE"
+ 	 storeAI r12 	=> r0, 8 
+ 	 output 1032
+	// Load RHS value of variable "b" at offset 4
+ 	 loadAI r0, 4 	=> r13 
+	// Code for "WRITE"
+ 	 storeAI r13 	=> r0, 12 
+ 	 output 1036

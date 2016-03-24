@@ -1,0 +1,21 @@
+program main;
+var a, b: integer; 
+    c:integer;
+begin
+  a := 1;
+  b := 1;
+  c := 0;
+  repeat
+  begin
+    a := a + 2;
+    if a + b < 10 then
+      b := b + 1
+    else
+    begin
+      b := b + 2;
+      c := c + 1
+    end
+  end	
+  until 10 <= b;
+  writeln(a)
+end.
